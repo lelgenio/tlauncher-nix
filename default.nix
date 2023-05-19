@@ -29,5 +29,6 @@ stdenv.mkDerivation rec {
       --add-flags "-jar $out/share/tlauncher/tlauncher.jar" \
       --prefix PATH : ${lib.makeBinPath runtimeDeps} \
       --set _JAVA_AWT_WM_NONREPARENTING 1
+    install -DT ${./tlauncher.desktop} $out/share/applications/tlauncher.desktop
   '';
 }
